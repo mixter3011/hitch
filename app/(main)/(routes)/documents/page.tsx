@@ -13,7 +13,7 @@ const DocumentsPage = () => {
     const create = useMutation(api.documents.create);
 
     const onCreate = () => {
-        const promise = create({ title: "Untitled"});
+        const promise = create({ title: "Untitled" });
 
         toast.promise(promise, {
             loading: "Creating a new note...",
@@ -23,28 +23,30 @@ const DocumentsPage = () => {
     };
 
     return (
-        <div className="h-full flex flex-col items-center justify-center space-y-4">
-            <Image
-                src="/Thinking.png"
-                height="300"
-                width="300"
-                alt="Thinking"
-                className="dark:hidden"
-            />
-            <Image
-                src="/Thinking-dark.png"
-                height="300"
-                width="300"
-                alt="Thinking"
-                className="hidden dark:block"
-            />
-            <h2 className="text-lg font-medium">
-                Welcome to {user?.firstName}&apos;s Hitch
-            </h2>
-            <Button onClick={onCreate}>
-                <PlusCircle className="h-4 w-4 mr-2"/>
-                Create a note
-            </Button>
+        <div className="h-full flex items-center justify-center">
+            <div className="text-center space-y-4">
+                <Image
+                    src="/Thinking.png"
+                    height="300"
+                    width="300"
+                    alt="Thinking"
+                    className="dark:hidden mx-auto"
+                />
+                <Image
+                    src="/Thinking-dark.png"
+                    height="300"
+                    width="300"
+                    alt="Thinking"
+                    className="hidden dark:block mx-auto"
+                />
+                <h2 className="text-lg font-medium">
+                    Welcome to {user?.firstName}&apos;s Hitch
+                </h2>
+                <Button onClick={onCreate}>
+                    <PlusCircle className="h-4 w-4 mr-2" />
+                    Create a note
+                </Button>
+            </div>
         </div>
     );
 }
