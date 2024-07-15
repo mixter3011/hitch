@@ -23,8 +23,7 @@ const DocumentsPage = () => {
     };
 
     return (
-        <div className="h-full flex items-center justify-center">
-            <div className="text-center space-y-4">
+        <div className="h-full flex flex-col items-center justify-center space-y-4">
                 <Image
                     src="/Thinking.png"
                     height="300"
@@ -46,7 +45,6 @@ const DocumentsPage = () => {
                     <PlusCircle className="h-4 w-4 mr-2" />
                     Create a note
                 </Button>
-            </div>
         </div>
     );
 }
